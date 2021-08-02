@@ -164,14 +164,18 @@ p {
   padding: 50px;
   text-align: center;
 
-  /* 브라우저 최대크기설정 */
-  max-width: 1200px;
-
   /* 오른족에 마진이 있어서 중간정렬이 안되기때문에.. */
   margin: auto;
 }
 
+.section__container {
+  /* 브라우저 최대크기설정 */
+  max-width: 1200px;
+  margin: auto;
+}
+
 /* about */
+
 .about__majors {
   /* flex 박스 설정후  공간 설정 */
   display: flex;
@@ -233,4 +237,63 @@ p {
 
 .job__period {
   font-size: var(--font-micro);
+}
+
+/* Skills */
+
+#skills {
+  background-color: rgb(119, 96, 79);
+}
+
+.skillset {
+  display: flex;
+  background-color: lightgray;
+  color: var(--color-black);
+  margin: 20px 0;
+  font-weight: var(--weight-semi-bold);
+}
+
+.skillset__title {
+  color: var(--color-black);
+  font-weight: var(--weight-bold);
+}
+
+.skillset__left {
+  flex-basis: 60%;
+  background-color: var(--color-dark-grey);
+  padding: 20px 40px;
+}
+
+.skill {
+  margin-bottom: 32px;
+}
+
+.skill_description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill__bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-grey);
+}
+
+.skill__value {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-orange);
+}
+
+.skillset__right {
+  flex-basis: 40%;
+}
+
+.tools {
+  background-color: var(--color-grey);
+}
+
+.tools,
+.etc {
+  padding: 20px;
 }
