@@ -25,8 +25,24 @@ navbarMenu.addEventListener('click', (event)=> {
     if (link == null){
         return;
     }
-    console.log(event.target.dataset.link);
-    const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({behavior:"smooth"});
+    
+    scrollIntoView(link);
 
 });
+
+//contact me 선택시 이동 
+const contactBtn = document.querySelector('.home__contact');
+contactBtn.addEventListener('click', ()=> {
+  scrollIntoView('#contact');
+
+});
+
+
+
+//스크롤 이동 함수 선언
+//selector를 주면 해당하는 요소를 찾은 후 이동
+//코딩이 간편해짐
+function scrollIntoView(selector){
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior:"smooth"});
+}
