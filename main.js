@@ -38,6 +38,14 @@ contactBtn.addEventListener('click', ()=> {
 });
 
 
+//스크롤 이동시  Home 영역 투명하게
+//opacity를 사용해서 , opacity 0 =완전투명 1 = 불투명
+const home = document.querySelector('.home__container');
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener('scroll', ()=> {
+    home.style.opacity = 1-window.scrollY/homeHeight;
+});
+
 
 //스크롤 이동 함수 선언
 //selector를 주면 해당하는 요소를 찾은 후 이동
