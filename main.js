@@ -54,3 +54,19 @@ function scrollIntoView(selector){
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({behavior:"smooth"});
 }
+
+//arrow up Btn  스크롤  내려갈때 나타마
+const arrowUp = document.querySelector('.arrow-up');
+document.addEventListener('scroll',()=>{
+if(window.scrollY>homeHeight /2) {
+    arrowUp.classList.add('visible');
+}else{
+    arrowUp.classList.remove('visible');
+}
+
+});
+
+//arrow Btn 클릭시 상위로 이동
+arrowUp.addEventListener('click', ()=>{
+    scrollIntoView('#home');
+})
