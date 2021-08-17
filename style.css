@@ -124,18 +124,18 @@ p {
   font-weight: var(--weight-semi-bold);
 }
 
+/* 평소에는 navbar 보더가 보이지않는 상태로 설정 */
 .navbar__menu__item {
   padding: 8px 12px;
   margin: 0 4px;
   cursor: pointer;
+  border: 1px solid transparent;
   border-radius: var(--size-border-radius);
 }
 
-.navbar__menu__item.active {
-  border: 1px solid white;
-}
-
+/* hover상태에서 보더와 컬러 효과 */
 .navbar__menu__item:hover {
+  border: 1px solid white;
   background-color: var(--color-dark-white);
   border-radius: var(--size-border-radius);
 }
@@ -330,13 +330,13 @@ p {
   padding: 8px 48px;
 }
 
-.category__btn.active,
+.category__btn.selected,
 .category__btn:hover {
   background-color: var(--color-dark-pink);
   color: var(--color-white);
 }
 
-.category__btn.active .category__count,
+.category__btn.selected .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
   top: 0;

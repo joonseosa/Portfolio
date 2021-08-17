@@ -82,9 +82,18 @@ workBtnContainer.addEventListener('click',(e)=>{
    if(filter == null){
        return; 
    }
-   projectContainer.classList.add('anim-out');
+ 
    
+   //애니메이션 수행 전 버튼 처리
+   //이전 선택 아이템에서 셀렉션 없애고 새로클릭된 대상에 대해서 적용
+   //e.target 의 버튼이 클릭이됐다면  그대로 e.target을 사용하고
+   //아닐때는 span의 부모노드를 사용한다 (버튼)
+   const active = document.querySelector('.category__btn.selected')
+   active.classList.remove('selected');
+   const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+   target.classList.add('selected');
 
+   projectContainer.classList.add('anim-out');
    setTimeout(()=> {
     projects.forEach((project)=> {
         console.log(project.dataset.type);
