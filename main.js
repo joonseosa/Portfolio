@@ -17,6 +17,8 @@ document.addEventListener('scroll',()=>{
 
 });
 
+
+
 // tab선택시 스크롤링 이동 
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event)=> {
@@ -25,10 +27,18 @@ navbarMenu.addEventListener('click', (event)=> {
     if (link == null){
         return;
     }
-    
+    navbarMenu.classList.remove('open');
     scrollIntoView(link);
 
 });
+
+
+//NavBar toggle Btn
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click',()=> {
+    navbarMenu.classList.toggle('open');
+});
+
 
 //contact me 선택시 이동 
 const contactBtn = document.querySelector('.home__contact');
