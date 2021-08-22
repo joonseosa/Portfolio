@@ -179,6 +179,10 @@ p {
   border-radius: 4px;
 }
 
+.home__contact:hover {
+  background-color: var(--color-dark-white);
+}
+
 /* Section common */
 .section {
   padding: 50px;
@@ -328,6 +332,7 @@ p {
   border-radius: 4px;
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
 }
 
 .category__btn.selected,
@@ -352,9 +357,9 @@ p {
   /* span 태그 안에 카테고리카운트가 있어서 모양이 찌그러지기 때문에
   인라인 블록으로 설정함  */
   display: inline-block;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 4px;
+  right: 16px;
   /* 평소에는 카운트 넘버가 보이지않음, opacity로 설정 */
   opacity: 0;
 
@@ -525,8 +530,20 @@ p {
 화면이 768px 보다 작을때 반응하게됨 */
 
 @media screen and (max-width: 768px) {
+  :root {
+    /* Font size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+
   .navbar__toggle-btn {
     display: block;
+    top: 16px;
+    right: 16px;
+    font-size: var(--font-medium);
   }
   #navbar {
     flex-direction: column;
@@ -549,16 +566,28 @@ p {
     display: block;
   }
 
+  .section {
+    padding: 16px;
+    padding-top: 40px;
+  }
+
   .about__majors {
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0px;
   }
 
   .major {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
   }
 
   .skillset {
     flex-direction: column;
+  }
+
+  .category__btn {
+    margin: 4px 0;
+    width: 100%;
   }
 
   /* 화면이 작을때 flex-grow를 사용해서 딱 맞게 설정 */
@@ -566,8 +595,35 @@ p {
     flex-grow: 1;
   }
 
+  /* 테스티모니얼 이미지가 항상 위로 설정됨 
+      align-items: center로 정렬 */
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial__speech-bubble {
+    order: 1;
+  }
+
+  .arrow-up {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  /* avatar 짝수,홀수일때 margin 없애기  */
+  .testimonial__avatar:nth-child(even),
+  .testimonial__avatar:nth-child(odd) {
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
   .testimonial__avatar {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
   }
 }
