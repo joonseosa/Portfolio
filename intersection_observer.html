@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .box {
+        width: 300px;
+        height: 300px;
+        margin: 80px auto;
+        background-color: plum;
+        transition: 2000ms;
+      }
+
+      .box.active {
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+    <div class="box">7</div>
+    <div class="box">8</div>
+    <div class="box">9</div>
+    <div class="box">10</div>
+    <div class="box">11</div>
+    <div class="box">12</div>
+    <div class="box">13</div>
+    <div class="box">14</div>
+    <div class="box">15</div>
+    <div class="box">16</div>
+    <div class="box">17</div>
+    <div class="box">18</div>
+    <div class="box">19</div>
+    <div class="box">20</div>
+
+    <script>
+      // box 전체 선택
+      const boxes = document.querySelectorAll(".box");
+
+      //인터섹션 옵저버  오브젝트 생성
+      //entries는 화면에 들어온 요소의 정보를 담고있다.
+
+      //화면에 박스가 들어온다면(아주 조금이라도..) 컬러가 변경됨
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          } else {
+            entry.target.classList.remove("active");
+          }
+        });
+      });
+      boxes.forEach((box) => observer.observe(box));
+    </script>
+  </body>
+</html>
